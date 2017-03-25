@@ -28,6 +28,22 @@ public abstract class Node {
 	@Setter
 	protected URL url;
 
+	public ID getId() {
+		return id;
+	}
+
+	public void setId(ID id) {
+		this.id = id;
+	}
+
+	public URL getUrl() {
+		return url;
+	}
+
+	public void setUrl(URL url) {
+		this.url = url;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (o == null || !(o instanceof Node))
@@ -102,6 +118,7 @@ public abstract class Node {
 	/**
 	 * Removes the given object from the list stored under the given ID.
 	 *
+	 * replica 也会删除么
 	 * @param entry
 	 *            The entry to remove from the dht.
 	 * @throws CommunicationException
@@ -123,6 +140,7 @@ public abstract class Node {
 
 	/**
 	 * Returns all entries stored under the given ID.
+	 * 为什么一个 id 下可以有这么多 entries
 	 *
 	 * @param id
 	 * @return A {@link Set} of entries associated with <code>id</code>.

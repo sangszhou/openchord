@@ -11,11 +11,13 @@
 	<artifactId>open-chord-core</artifactId>
 	<name>open-chord-core</name>
 	<dependencies>
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.8</version>
 		</dependency>
+
 		<dependency>
 			<groupId>open-chord-api</groupId>
 			<artifactId>open-chord-api</artifactId>

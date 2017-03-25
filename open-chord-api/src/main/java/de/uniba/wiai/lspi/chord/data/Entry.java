@@ -19,4 +19,19 @@ public class Entry implements Serializable {
 	@NonNull
 	private Serializable value;
 
+	public ID getId() {
+		return id;
+	}
+
+	public void setId(ID id) {
+		this.id = id;
+	}
+
+	public Serializable getValue() {
+		return value;
+	}
+
+	public void setValue(Serializable value) {
+		this.value = value;
+	}
 }

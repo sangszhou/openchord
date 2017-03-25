@@ -29,8 +29,8 @@ import de.uniba.wiai.lspi.chord.data.URL;
 import de.uniba.wiai.lspi.util.logging.Logger;
 
 /**
- * Stores all remote references of nodes the local node is connected to and provides methods for querying and manipulating these references. Makes use of one
- * finger table, one successor list, and one predecessor reference.
+ * Stores all remote references of nodes the local node is connected to and provides methods for querying and manipulating these references.
+ * Makes use of one finger table, one successor list, and one predecessor reference.
  *
  * @author Karsten Loesing
  * @version 1.0.5
@@ -104,7 +104,8 @@ final class References {
 	}
 
 	/**
-	 * Determines the closest preceding node for the given ID based on finger table, successor list, and predecessor, but without testing the node's liveliness.
+	 * Determines the closest preceding node for the given ID based on finger table,
+	 * successor list, and predecessor, but without testing the node's liveliness.
 	 *
 	 * @param key
 	 *            ID to find closest preceding node for.
@@ -134,6 +135,7 @@ final class References {
 		}
 
 		// predecessor is appropriate only if it precedes the given id
+        // 那么为什么会这样呢？
 		Node predecessorIfAppropriate = null;
 		if (this.predecessor != null && key.isInInterval(this.predecessor.getId(), this.localID)) {
 			predecessorIfAppropriate = this.predecessor;
@@ -142,8 +144,8 @@ final class References {
 
 		// with three references which may be null, there are eight (8) cases we
 		// have to enumerate...
-		Node closestNode = null;
-		List<ID> orderedIDList = new ArrayList<ID>(foundNodes.keySet());
+		Node closestNode;
+		List<ID> orderedIDList = new ArrayList<>(foundNodes.keySet());
 		orderedIDList.add(key);
 		int sizeOfList = orderedIDList.size();
 		// size of list must be greater than one to not only contain the key.

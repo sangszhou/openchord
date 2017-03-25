@@ -43,7 +43,8 @@ final class FingerTable {
 	private final Node[] remoteNodes;
 
 	/**
-	 * Reference on parent object.
+	 * Reference on parent object
+	 * 它的持有者
 	 */
 	private final References references;
 
@@ -171,6 +172,7 @@ final class FingerTable {
 	 * entry is <code>null</code> or further away from the local node ID than the new node ID (ie. the new node ID is in the interval (local node ID, currently
 	 * stored node ID) ).
 	 *
+	 * 这里的逻辑其实非常简单，就是找到 Node 的插入位置
 	 * @param proxy
 	 *            Reference to be added to the finger table.
 	 * @throws CommunicationException
@@ -204,6 +206,7 @@ final class FingerTable {
 
 			if (getEntry(i) == null) {
 				setEntry(i, proxy);
+				// 和老的 entryId 做比较，如果小于，则继续
 			} else if (proxy.getId().isInInterval(this.localID, getEntry(i).getId())) {
 				Node oldEntry = getEntry(i);
 				setEntry(i, proxy);
@@ -221,11 +224,8 @@ final class FingerTable {
 		}
 		if (this.logger.isEnabledFor(INFO)) {
 			if (highestWrittenIndex == lowestWrittenIndex) {
-
 				this.logger.info("Added reference to finger table entry " + highestWrittenIndex);
-
 			} else {
-
 				this.logger.info("Added reference to finger table entries " + lowestWrittenIndex + " to " + highestWrittenIndex);
 
 			}

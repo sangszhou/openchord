@@ -25,4 +25,19 @@ public class ReferencesAndEntries implements Serializable {
 		this.entries = entries;
 	}
 
+	public List<Node> getReferences() {
+		return references;
+	}
+
+	public void setReferences(List<Node> references) {
+		this.references = references;
+	}
+
+	public Set<Entry> getEntries() {
+		return entries;
+	}
+
+	public void setEntries(Set<Entry> entries) {
+		this.entries = entries;
+	}
 }

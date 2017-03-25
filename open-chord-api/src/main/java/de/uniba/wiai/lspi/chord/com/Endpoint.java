@@ -24,7 +24,7 @@ import de.uniba.wiai.lspi.chord.data.URL;
  * </p>
  * <p>
  * For each protocol that shall be supported a separate endpoint has to be implemented. To initialise endpoints for a {@link Node} an {@link URL} has to be
- * provided to the {@link #createEndpoint(Node, URL)} endpoint factory method. This methods tries to determine the endpoint with help of the protocol names
+ * provided to the { createEndpoint(Node, URL)} endpoint factory method. This methods tries to determine the endpoint with help of the protocol names
  * defined by the url. Supported protocols can be found in the {@link URL} class.
  * </p>
  * An Endpoint can be in three states:
@@ -69,6 +69,13 @@ public abstract class Endpoint {
 			return this == CRASHED;
 		}
 
+		public int getOrder() {
+			return order;
+		}
+
+		public void setOrder(int order) {
+			this.order = order;
+		}
 	}
 
 	/**
@@ -83,6 +90,26 @@ public abstract class Endpoint {
 		METHODS_ALLOWED_IN_ACCEPT_ENTRIES = Collections.unmodifiableList(list);
 	}
 
+	public Node getNode() {
+		return node;
+	}
+
+	public void setNode(Node node) {
+		this.node = node;
+	}
+
+	public URL getUrl() {
+		return url;
+	}
+
+	public void setUrl(URL url) {
+		this.url = url;
+	}
+
+	public State getState() {
+		return state;
+	}
+
 	@Getter
 	protected Node node;
 	@Getter
@@ -95,7 +122,7 @@ public abstract class Endpoint {
 		this.node = node;
 		this.url = url;
 		this.state = Endpoint.State.STARTED;
-		this.listeners = new HashSet<EndpointListener>();
+		this.listeners = new HashSet<>();
 	}
 
 	public void register(EndpointListener listener) {

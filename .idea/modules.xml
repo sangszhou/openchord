@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/open-chord.iml" filepath="$PROJECT_DIR$/open-chord.iml" />
+      <module fileurl="file://$PROJECT_DIR$/open-chord-api/open-chord-api.iml" filepath="$PROJECT_DIR$/open-chord-api/open-chord-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/open-chord-console/open-chord-console.iml" filepath="$PROJECT_DIR$/open-chord-console/open-chord-console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/open-chord-core/open-chord-core.iml" filepath="$PROJECT_DIR$/open-chord-core/open-chord-core.iml" />
+    </modules>
+  </component>
+</project>

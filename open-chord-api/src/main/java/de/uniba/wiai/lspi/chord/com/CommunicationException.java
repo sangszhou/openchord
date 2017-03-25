@@ -5,7 +5,7 @@ package de.uniba.wiai.lspi.chord.com;
  * @author Masayuki Higashino
  * @version 1.0.5
  */
-public class CommunicationException extends Exception {
+	public class CommunicationException extends Exception {
 
 	private static final long serialVersionUID = -3606098863603794463L;
 

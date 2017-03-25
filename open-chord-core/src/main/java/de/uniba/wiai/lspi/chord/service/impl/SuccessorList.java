@@ -88,7 +88,7 @@ final class SuccessorList {
 		}
 		this.localID = localID;
 		this.capacity = numberOfEntries;
-		this.successors = new LinkedList<Node>();
+		this.successors = new LinkedList<>();
 		this.references = parent;
 		this.entries = entries;
 
